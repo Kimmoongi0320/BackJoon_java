@@ -21,20 +21,20 @@ public class Main{
             }
         }
 
-        backTracking(0);
+        backTracking(0,0);
 
         System.out.println(answer);
     }
 
-    public static void backTracking(int count){
+    public static void backTracking(int count,int startX){
         if (count == 3){
             bfs();
         }else{
-            for (int i = 0; i<board.length; i++){
+            for (int i = startX; i<board.length; i++){
                 for (int j =0; j<board[0].length; j++){
                     if (board[i][j] == 0){
                         board[i][j] = 1;
-                        backTracking(count+1);
+                        backTracking(count+1,i);
                         board[i][j] = 0;
                     }
                 }
