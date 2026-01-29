@@ -26,11 +26,11 @@ public class Main {
         }
         long[][] mat = divide(times / 2);
 
+        long[][] answer = multiplyMatrix(mat,mat);
         if((times % 2) == 1){
-            long[][] answer = multiplyMatrix(mat,mat);
             return multiplyMatrix(answer, new long[][] {{1,1},{1,0}});
         }else{
-            return multiplyMatrix(mat,mat);
+            return answer;
         }
     }
 }
